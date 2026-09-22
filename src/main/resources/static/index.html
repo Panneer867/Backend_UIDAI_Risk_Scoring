@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UIDAI Sandbox - Risk Scoring</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<div class="container">
+    <header>
+        <div class="badge">UIDAI SANDBOX</div>
+        <h1>Fraud Risk Scoring</h1>
+        <p>Asynchronous risk evaluation demo</p>
+    </header>
+
+    <section class="card">
+        <h2>Initiate Risk Evaluation</h2>
+        <form id="riskForm">
+            <label>Partner ID</label>
+            <input id="partnerId" value="partner_A" required>
+
+            <label>Aadhaar Number</label>
+            <input id="aadhaar" value="1234-5678-1234" maxlength="14" required>
+
+            <label>Device ID</label>
+            <input id="deviceId" value="DEVICE-001" required>
+
+            <label>Callback URL</label>
+            <input id="callbackUrl" value="http://localhost:8080/mock/partner/callback" required>
+
+            <button type="submit">Initiate Risk Evaluation</button>
+        </form>
+    </section>
+
+    <section class="card">
+        <h2>Response</h2>
+        <pre id="result">Waiting for request...</pre>
+    </section>
+
+    <section class="card">
+        <h2>Demo Tokens</h2>
+        <ul>
+            <li><code>demo-write-token</code> — partner_A, write + read</li>
+            <li><code>demo-read-token</code> — partner_A, read only</li>
+            <li><code>partner-b-token</code> — partner_B, read only</li>
+        </ul>
+    </section>
+</div>
+<script src="/app.js"></script>
+</body>
+</html>
